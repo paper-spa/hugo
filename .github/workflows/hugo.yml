@@ -30,10 +30,10 @@ jobs:
     env:
       HUGO_VERSION: 0.99.0
     steps:
-      - name: Install Hugo ${HUGO_VERSION} CLI
+      - name: Install Hugo CLI
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.deb \
-          && dpkg -i ${{ runner.temp }}/hugo.deb
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build with Hugo
