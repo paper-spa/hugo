@@ -42,7 +42,7 @@ jobs:
         run: |
           hugo \
             --minify \
-            --baseURL https://yoannchaudet.github.io/hugo/
+            --baseURL --baseURL ${{ steps.page_url.outputs.base_url }}
       - name: Upload artifact
         uses: paper-spa/upload-pages-artifact@v0
         with:
