@@ -42,7 +42,7 @@ jobs:
         run: |
           hugo \
             --minify \
-            --baseURL --baseURL ${{ steps.page_url.outputs.base_url }}
+            --baseURL ${{ steps.page_url.outputs.base_url }}
       - name: Upload artifact
         uses: paper-spa/upload-pages-artifact@v0
         with:
@@ -52,7 +52,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.origin }}
     runs-on: ubuntu-latest
     needs: build
     steps:
