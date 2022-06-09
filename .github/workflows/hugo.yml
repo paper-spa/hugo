@@ -38,11 +38,14 @@ jobs:
         uses: actions/checkout@v2
         with:
           submodules: recursive
+      - name: Setup Pages
+        id: page_url
+        uses: paper-spa/setup-pages@main
       - name: Build with Hugo
         run: |
           hugo \
             --minify \
-            --baseURL ${{ steps.page_url.outputs.base_url }}
+            --baseURL ${{ steps.page_url.outputs.origin }}
       - name: Upload artifact
         uses: paper-spa/upload-pages-artifact@v0
         with:
