@@ -39,13 +39,13 @@ jobs:
         with:
           submodules: recursive
       - name: Setup Pages
-        id: page_url
+        id: pages
         uses: paper-spa/setup-pages@main
       - name: Build with Hugo
         run: |
           hugo \
             --minify \
-            --baseURL ${{ steps.page_url.outputs.origin }}
+            --baseURL ${{ steps.pages.outputs.origin }}
       - name: Upload artifact
         uses: paper-spa/upload-pages-artifact@v0
         with:
