@@ -40,7 +40,7 @@ jobs:
           submodules: recursive
       - name: Setup Pages
         id: pages
-        uses: paper-spa/configure-pages@jess/create-pages
+        uses: paper-spa/configure-pages@path-injection
       - name: Build with Hugo
         run: |
           hugo \
