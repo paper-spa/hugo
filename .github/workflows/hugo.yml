@@ -41,6 +41,9 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: paper-spa/configure-pages@path-injection
+        with: 
+          static_site_generator: hugo
+          
       - name: Build with Hugo
         run: |
           hugo \
